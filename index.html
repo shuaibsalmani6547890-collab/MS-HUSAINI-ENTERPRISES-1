@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#0a1a3f">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>MS Husaini Enterprises</title>
+<style>
+:root{--bg:#020418;--card:#0d1b3d;--card2:#16305c;--line:#27406f;--txt:#e8efff;--mut:#8ea3cc;--grn:#22c55e;--blu:#2563eb;--red:#ef4444}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:Roboto,system-ui,sans-serif;padding-bottom:90px}
+header{position:sticky;top:0;z-index:20;background:linear-gradient(#0a1a3f,#0d1b3d);padding:14px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
+header h1{margin:0;font-size:20px;color:#7aa2ff}
+header small{font-size:12px}
+#langBtn{background:#3a3a4a;color:#fff;border:0;border-radius:20px;padding:10px 14px;font-weight:600}
+main{padding:14px}
+.tab{display:none}.tab.on{display:block}
+.banner{height:150px;border-radius:18px;background:linear-gradient(135deg,#064e3b,#0f766e 50%,#0a1a3f);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;margin-bottom:14px;padding:10px}
+.banner h2{margin:0 0 4px;font-size:22px}
+.pill{background:var(--grn);color:#062b14;font-weight:700;border-radius:20px;padding:6px 14px;font-size:13px;margin-top:8px}
+h3.sec{color:var(--grn);font-size:15px;margin:18px 0 10px}
+.hint{font-size:12px;color:var(--mut);margin:0 0 10px;line-height:1.5}
+.f{position:relative;margin-bottom:12px}
+.f label{position:absolute;top:-8px;left:12px;background:var(--bg);padding:0 6px;font-size:11px;color:var(--mut);z-index:1}
+.f input,.f textarea,.f select{width:100%;background:transparent;border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:16px 12px;font-size:15px;outline:none}
+.f select{background:#0d1b3d}
+.f input:focus,.f textarea:focus,.f select:focus{border-color:#7aa2ff}
+.f input:disabled{opacity:.4}
+.row{display:flex;gap:10px}.row .f{flex:1;min-width:0}
+input[type=checkbox]{width:22px;height:22px;accent-color:#22c55e;flex-shrink:0;margin:0}
+.tick{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+.ticks{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.gwh,.gwr{display:grid;grid-template-columns:1fr 58px 58px 100px;gap:6px;align-items:center;margin-bottom:6px}
+.gwh{font-size:11px;color:var(--mut);text-align:center}
+.gwr .gn{font-size:13px}
+.gwr .c{display:flex;justify-content:center}
+.gwr input[type=text]{width:100%;background:transparent;border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:10px 8px;font-size:13px;outline:none}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px}
+.chip{white-space:nowrap;border:1px solid var(--line);background:transparent;color:var(--txt);border-radius:10px;padding:9px 12px;font-size:12px}
+.chip:active{background:var(--blu)}
+.dp{background:var(--card2);border-radius:12px;padding:16px;display:flex;justify-content:space-between;margin-bottom:12px;font-weight:600}
+.dp b{color:var(--grn);font-size:18px}
+.photos{display:flex;gap:10px}
+.ph{flex:1;min-width:0;background:#fff;border-radius:12px;color:#0f766e;text-align:center;padding:8px;font-size:12px;font-weight:700;min-height:160px;display:flex;flex-direction:column;justify-content:space-between}
+.ph .box{flex:1;display:flex;align-items:center;justify-content:center;color:#999;font-weight:400;overflow:hidden;margin:6px 0;border-radius:8px}
+.ph img{width:100%;height:90px;object-fit:cover}
+.ph .b{display:flex;justify-content:space-around;align-items:center}
+.pb{position:relative;display:inline-block;overflow:hidden;font-size:22px;padding:4px 9px;cursor:pointer}
+.pb input{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;font-size:100px;cursor:pointer}
+.btn{width:100%;border:0;border-radius:14px;padding:16px;font-size:15px;font-weight:700;color:#fff;background:var(--blu);margin-top:8px}
+.btn.g{background:var(--grn);color:#052e16}.btn.o{background:transparent;border:1px solid #7aa2ff;color:#7aa2ff}.btn.r{background:var(--red)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:14px}
+.card h4{margin:0 0 10px;color:var(--grn)}
+.stats{display:flex;background:var(--card2);border-radius:14px;padding:14px 6px;margin:12px 0;text-align:center}
+.stats div{flex:1;font-size:11px;color:var(--mut)}.stats b{display:block;font-size:15px;margin-top:6px;color:#7aa2ff}
+.rec{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px;margin-bottom:12px}
+.rec .top{display:flex;gap:12px;align-items:flex-start}
+.av{width:44px;height:44px;border-radius:12px;background:#d1fae5;color:#047857;font-weight:800;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.rec .nm{font-weight:700;font-size:16px}.rec .md{color:var(--grn);font-size:13px}
+.rec .dt{margin-left:auto;font-size:12px;color:var(--mut)}
+.rec .in{background:#fff;color:#111;border-radius:10px;padding:10px;margin-top:10px;font-size:13px;line-height:1.7}
+.rec .act{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;margin-top:10px}
+.rec .act button{border:0;border-radius:10px;padding:8px 11px;font-weight:600;background:var(--card2);color:var(--txt);font-size:13px}
+.own{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.own:last-child{border:0}
+.own .av{background:var(--grn);color:#fff;border-radius:50%}
+.own .n{flex:1}.own .n b{display:block}
+.own a{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:18px;background:#1d3f8f}
+.own a.w{background:#14532d}
+nav{position:fixed;bottom:0;left:0;right:0;background:#0d1b3d;display:flex;border-top:1px solid var(--line);z-index:30;padding-bottom:6px}
+nav button{flex:1;background:none;border:0;color:var(--txt);padding:8px 1px;font-size:10.5px}
+nav button span{display:block;font-size:20px;border-radius:16px;padding:2px 0;margin:0 4px}
+nav button i{font-style:normal}
+nav button.on span{background:var(--blu)}
+nav button.on{color:#7aa2ff}
+#slide{display:none;position:fixed;inset:0;background:#fff;color:#000;z-index:100;overflow:auto;padding:12px}
+.slip{max-width:640px;margin:auto;border:2px solid #0f766e;padding:14px;font-size:14px}
+.slip h2{text-align:center;margin:0;color:#0f766e}.slip p.c{text-align:center;margin:2px 0 8px;font-size:12px}
+.slip h4{margin:14px 0 0;color:#0f766e}
+.slip table{width:100%;border-collapse:collapse;margin-top:8px}
+.slip td,.slip th{border:1px solid #777;padding:6px 7px;height:32px;vertical-align:middle}
+.slip th{background:#e6f7f4;font-size:12px}
+.slip td.k{background:#f0fdfa;width:38%;font-weight:600}
+.slip td.ck{text-align:center;font-size:18px}
+.slip .ims{display:flex;gap:6px;margin-top:10px}.slip .ims img{width:33%;height:110px;object-fit:cover;border:1px solid #bbb}
+.slip .sg{display:flex;justify-content:space-between;margin-top:40px;font-size:12px}
+.slip .ft{margin-top:14px;font-size:10px}
+.nop{max-width:640px;margin:12px auto;display:flex;gap:8px}
+.nop button{flex:1;padding:14px;border:0;border-radius:10px;font-weight:700;background:#0f766e;color:#fff}
+@page{margin:10mm}
+@media print{.nop{display:none}body *{visibility:hidden}#slide,#slide *{visibility:visible}#slide{position:absolute;left:0;top:0;width:100%;padding:0;overflow:visible}tr{page-break-inside:avoid}}
+#toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%);background:#111;border:1px solid var(--grn);padding:12px 18px;border-radius:12px;z-index:200;display:none;max-width:90%;text-align:center}
+.foot{text-align:center;color:var(--mut);font-size:11px;margin:20px 0}
+</style>
+</head>
+<body>
+<header>
+  <div><h1 class="shop-title"></h1><small class="own-names"></small></div>
+  <button id="langBtn" onclick="toggleLang()" data-t="langBtn"></button>
+</header>
+
+<main>
+<!-- ============ TAB 1: NEW BILL ============ -->
+<section id="t1" class="tab on">
+  <div class="banner"><h2 class="shop-up"></h2><div style="font-size:12px" class="own-names"></div><div style="font-size:12px;margin-top:4px" class="own-phones"></div><div class="pill">⚡ 100% Electric EV Mobility Dealership</div></div>
+  <div class="hint" data-t="optHint"></div>
+  <input type="hidden" id="editId">
+
+  <h3 class="sec" data-t="s1"></h3>
+  <div class="f"><label data-t="lName"></label><input id="cname" data-p="lName"></div>
+  <div class="f"><label data-t="lFather"></label><input id="cfather" data-p="lFather"></div>
+  <div class="row">
+    <div class="f"><label data-t="lPhone"></label><input id="cphone" type="tel" maxlength="10" data-p="lPhone"></div>
+    <div class="f"><label data-t="lAadhaar"></label><input id="caadhaar" inputmode="numeric" maxlength="14" data-p="lAadhaar"></div>
+  </div>
+
+  <h3 class="sec" data-t="s2"></h3>
+  <div class="f"><label data-t="lModel"></label><input id="cmodel" data-p="lModel"></div>
+  <div style="font-size:12px;color:var(--mut);margin-bottom:6px" data-t="popModels"></div>
+  <div class="chips" id="modelChips"></div>
+  <div class="row">
+    <div class="f"><label data-t="lVeh"></label><input id="cveh" data-p="lVeh"></div>
+    <div class="f"><label data-t="lDeliv"></label><input id="cdate" type="date"></div>
+  </div>
+  <label class="tick" style="margin-bottom:12px"><input type="checkbox" id="cdateblank" onchange="dateTick('cdateblank','cdate')"><span data-t="blankDate"></span></label>
+  <div class="f"><label data-t="lChassis"></label><input id="cchassis" data-p="lChassis"></div>
+
+  <h3 class="sec" data-t="s3"></h3>
+  <div class="f"><label data-t="lBat"></label><input id="cbat" data-p="lBat"></div>
+  <div style="font-size:12px;color:var(--mut);margin-bottom:6px" data-t="popBats"></div>
+  <div class="chips" id="batChips"></div>
+  <div class="f"><label data-t="lCharger"></label><input id="ccharger" data-p="lCharger"></div>
+
+  <h3 class="sec" data-t="sGW"></h3>
+  <div id="gwBox"></div>
+
+  <h3 class="sec" data-t="sPay"></h3>
+  <div class="ticks" id="payBox"></div>
+
+  <h3 class="sec" data-t="sPrice"></h3>
+  <div class="row">
+    <div class="f"><label data-t="lTotal"></label><input id="ctotal" type="number" inputmode="numeric" data-p="lTotal" oninput="calc()"></div>
+    <div class="f"><label data-t="lFin"></label><input id="cfin" type="number" inputmode="numeric" data-p="lFin" oninput="calc()"></div>
+  </div>
+  <div class="dp"><span data-t="lDp"></span><b id="cdp">₹ 0.00</b></div>
+  <div class="row">
+    <div class="f"><label data-t="lEmiN"></label><input id="cemin" type="number" inputmode="numeric" placeholder="24" oninput="calc()"></div>
+    <div class="f"><label data-t="lEmi"></label><input id="cemi" type="number" inputmode="numeric" placeholder="5600"></div>
+  </div>
+  <div class="f"><label data-t="lAgency"></label><input id="cagency" data-p="lAgency"></div>
+
+  <h3 class="sec" data-t="sPhoto"></h3>
+  <div class="photos" id="photoBox"></div>
+
+  <button class="btn g" onclick="saveBill()" data-t="btnSave"></button>
+  <button class="btn o" onclick="showHTML(slipHTML({gw:[],pay:[],photos:{}}))" data-t="btnBlank"></button>
+  <button class="btn o" onclick="resetForm()" data-t="btnReset"></button>
+</section>
+
+<!-- ============ TAB 2: RECORDS ============ -->
+<section id="t2" class="tab">
+  <div class="f" style="margin-top:6px"><input id="q" oninput="renderRecs()" data-p="qPh"></div>
+  <div class="stats"><div data-t="stCnt"></div><div data-t="stTot"></div><div data-t="stFin"></div></div>
+  <div class="stats" style="margin-top:-6px"><div><b id="sCnt">0 EV</b></div><div><b id="sTot">₹0</b></div><div><b id="sFin">₹0</b></div></div>
+  <div id="recList"></div>
+</section>
+
+<!-- ============ TAB 3: TEMP KIST SLIP ============ -->
+<section id="t3" class="tab">
+  <div class="card" style="background:#1e3a8a"><b data-t="kTitle"></b><br><span style="font-size:13px" data-t="kInfo"></span></div>
+  <div class="f"><label data-t="kFrom"></label><select id="kSel" onchange="kFill()"></select></div>
+
+  <div class="f"><label data-t="lDate"></label><input id="kdate" type="date"></div>
+  <label class="tick" style="margin-bottom:12px"><input type="checkbox" id="kdateblank" onchange="dateTick('kdateblank','kdate')"><span data-t="blankDate"></span></label>
+
+  <div class="f"><label data-t="lName"></label><input id="kname" data-p="lName"></div>
+  <div class="f"><label data-t="lFather"></label><input id="kfather" data-p="lFather"></div>
+  <div class="row">
+    <div class="f"><label data-t="lPhone"></label><input id="kphone" type="tel" maxlength="10" data-p="lPhone"></div>
+    <div class="f"><label data-t="lVeh"></label><input id="kveh" data-p="lVeh"></div>
+  </div>
+  <div class="f"><label data-t="lModel"></label><input id="kmodel" data-p="lModel"></div>
+
+  <h3 class="sec" data-t="sPay"></h3>
+  <div class="ticks" id="kPayBox"></div>
+
+  <h3 class="sec" data-t="sPrice"></h3>
+  <div class="row">
+    <div class="f"><label data-t="lTotal"></label><input id="ktotal" type="number" inputmode="numeric" data-p="lTotal" oninput="kcalc()"></div>
+    <div class="f"><label data-t="lFin"></label><input id="kfin" type="number" inputmode="numeric" data-p="lFin" oninput="kcalc()"></div>
+  </div>
+  <div class="dp"><span data-t="lDp"></span><b id="kdp">₹ 0.00</b></div>
+  <div class="row">
+    <div class="f"><label data-t="lEmiN"></label><input id="kemin" type="number" inputmode="numeric" placeholder="12" oninput="kcalc()"></div>
+    <div class="f"><label data-t="lEmi"></label><input id="kemi" type="number" inputmode="numeric" placeholder="5600"></div>
+  </div>
+
+  <h3 class="sec" data-t="kTableT"></h3>
+  <div class="row">
+    <div class="f"><label data-t="kRows"></label><input id="krows" type="number" inputmode="numeric" placeholder="12"></div>
+    <div class="f"><label data-t="kFirst"></label><input id="kfirst" type="date"></div>
+  </div>
+  <label class="tick" style="margin-bottom:8px"><input type="checkbox" id="kbd" checked><span data-t="kBlankDate"></span></label>
+  <label class="tick" style="margin-bottom:12px"><input type="checkbox" id="kba"><span data-t="kBlankAmt"></span></label>
+  <div class="f"><label data-t="kRemark"></label><input id="kremark" data-p="kRemark"></div>
+
+  <button class="btn g" onclick="kMake()" data-t="kMake"></button>
+  <button class="btn o" onclick="kBlank()" data-t="kBlank"></button>
+  <button class="btn o" onclick="kReset()" data-t="btnReset"></button>
+</section>
+
+<!-- ============ TAB 4: SYNC ============ -->
+<section id="t4" class="tab">
+  <div class="card" style="background:#1e3a8a"><b data-t="syTitle"></b><br><span style="font-size:13px" data-t="syDesc"></span></div>
+  <div class="card"><h4 data-t="sy1T"></h4><div style="font-size:13px" data-t="sy1D"></div><button class="btn g" onclick="exportData()" data-t="sy1B"></button></div>
+  <div class="card"><h4 data-t="sy2T"></h4><div style="font-size:13px" data-t="sy2D"></div><input type="file" id="impFile" accept=".json,application/json" hidden><button class="btn o" onclick="document.getElementById('impFile').click()" data-t="sy2B"></button></div>
+  <div class="card"><h4 data-t="sy3T"></h4><div style="font-size:13px" data-t="sy3D"></div>
+    <div class="f" style="margin-top:14px"><input id="gurl" placeholder="Google Apps Script Web App URL"></div>
+    <button class="btn" onclick="cloudSync()" data-t="sy3B"></button>
+    <button class="btn o" onclick="copyScript()" data-t="sy3C"></button></div>
+  <div class="card" style="background:var(--card2)"><h4 data-t="syStepsT"></h4><div style="font-size:13px;line-height:1.8" data-t="syStepsD"></div></div>
+</section>
+
+<!-- ============ TAB 5: AGENCY ============ -->
+<section id="t5" class="tab">
+  <div class="banner"><h2 class="shop-up"></h2><div style="font-size:13px" data-t="sub"></div><div class="pill">⚡ 100% Electric EV Mobility Dealership</div></div>
+  <div class="card"><h4 data-t="agOwners"></h4>
+    <div id="ownList"></div>
+  </div>
+  <div class="card"><h4 data-t="stT"></h4><div class="hint" data-t="stD"></div>
+    <div class="f"><label data-t="fShop"></label><input id="ag_shop" data-p="fShop"></div>
+    <div class="f"><label data-t="fShopHi"></label><input id="ag_shopHi" data-p="fShopHi"></div>
+    <div class="row"><div class="f"><label data-t="fO1N"></label><input id="ag_o1n" data-p="fO1N"></div><div class="f"><label data-t="fO1P"></label><input id="ag_o1p" type="tel" maxlength="15" data-p="fO1P"></div></div>
+    <div class="row"><div class="f"><label data-t="fO2N"></label><input id="ag_o2n" data-p="fO2N"></div><div class="f"><label data-t="fO2P"></label><input id="ag_o2p" type="tel" maxlength="15" data-p="fO2P"></div></div>
+    <button class="btn g" onclick="saveSettings()" data-t="stSave"></button>
+    <button class="btn o" onclick="resetSettings()" data-t="stDef"></button></div>
+  <div class="card"><h4 data-t="agMgmt"></h4><div style="line-height:1.7;font-size:14px" data-t="agList"></div></div>
+</section>
+</main>
+
+<div id="slide"></div>
+<div id="toast"></div>
+
+<nav>
+  <button class="on" onclick="go(1)"><span>🧾</span><i data-t="n1"></i></button>
+  <button onclick="go(2)"><span>👥</span><i data-t="n2"></i></button>
+  <button onclick="go(3)"><span>📝</span><i data-t="n3"></i></button>
+  <button onclick="go(4)"><span>🔁</span><i data-t="n4"></i></button>
+  <button onclick="go(5)"><span>🏢</span><i data-t="n5"></i></button>
+</nav>
+
+<script>
+/* ================= helpers & state ================= */
+var $=function(i){return document.getElementById(i)};
+var LS='msh_records_v1', recs=[], lang=localStorage.getItem('msh_lang')||'hi', photos={cust:'',veh:'',bat:''};
+var MODELS=['Mayuri Deluxe (सवारी)','YC Yatri Super (ई-रिक्शा)','Saarthi Star (पैसेंजर)','Loader E-Cart (माल)'];
+var BATS=['Eastman 4x130Ah Heavy Duty (12 Month Guarantee)','Lithium-ion 60V (3 Year Guarantee)','Exide 4x120Ah (18 Month Guarantee)'];
+var GW=[['bat','gwBat'],['motor','gwMotor'],['ctrl','gwCtrl'],['chg','gwChg'],['body','gwBody'],['tyre','gwTyre'],['other','gwOther']];
+var PAYS=[['cash','payCash'],['fin','payFin'],['other','payOther']];
+var SK='msh_settings_v1';
+var DEF={shop:'MS Husaini Enterprises',shopHi:'मेसर्स हुसैनी एंटरप्राइजेज',o1n:'Mohammad Anees',o1p:'7668732106',o2n:'Mohammad Suhail',o2p:'7906599049'};
+var S=(function(){try{return Object.assign({},DEF,JSON.parse(localStorage.getItem(SK)||'{}'))}catch(e){return Object.assign({},DEF)}})();
+
+/* ================= translations [hindi, english] ================= */
+var D={
+title:['मेसर्स हुसैनी एंटरप्राइजेज','MS Husaini Enterprises'],
+langBtn:['🌐 English','🌐 हिंदी'],
+n1:['नया बिल','New Bill'],n2:['रिकॉर्ड','Records'],n3:['किस्त पर्ची','Kist Slip'],n4:['फ़ोन सिंक','Phone Sync'],n5:['एजेंसी','Agency'],
+sub:['ऑथराइज्ड ई-रिक्शा एवं इलेक्ट्रिक ईवी शोरूम','Authorized E-Rickshaw & Electric EV Showroom'],
+optHint:['सभी खाने वैकल्पिक हैं — जो खाना खाली छोड़ेंगे वह पर्ची पर खाली रहेगा, उसे बाद में पेन से भर सकते हैं।',"All fields are optional — any field left empty stays blank on the slip so you can fill it with a pen later."],
+s1:['ग्राहक की जानकारी','Customer Information'],
+lName:['ग्राहक का नाम','Customer Name'],
+lFather:['पिता का नाम',"Father's Name"],
+lPhone:['मोबाइल नंबर','Mobile No'],
+lAadhaar:['आधार कार्ड नंबर','Aadhaar No'],
+s2:['ई-रिक्शा विवरण','E-Rickshaw & EV Details'],
+lModel:['कौनसा ई-रिक्शा है (मॉडल)','E-Rickshaw Model'],
+popModels:['लोकप्रिय ई-रिक्शा मॉडल:','Popular E-Rickshaw Models:'],
+lVeh:['गाड़ी / अस्थायी नंबर','Vehicle / Temp No'],
+lDeliv:['डिलीवरी तारीख','Delivery Date'],
+lDate:['तारीख','Date'],
+blankDate:['तारीख खाली रखें (पेन से लिखूँगा)','Keep date blank (I will write by pen)'],
+lChassis:['चेचिस एवं मोटर नंबर','Chassis & Motor No'],
+s3:['बैटरी एवं चार्जर','Battery & Charger'],
+lBat:['
